@@ -1,0 +1,164 @@
+html,
+body {
+	overflow: hidden;
+}
+
+.back-image {
+	position: absolute;
+	top: 40px;
+	left: 1400px;
+	z-index: 10;
+	width: 50px;
+	height: auto;
+}
+
+.audio {
+	width: 40px;
+	height: auto;
+	right: 20px;
+	bottom: 40px;
+	cursor: pointer;
+}
+
+.dark-mode {
+	width: 40px;
+	height: auto;
+	right: 20px;
+	bottom: 90px;
+	cursor: pointer;
+}
+
+.camera {
+	width: 40px;
+	height: auto;
+	right: 20px;
+	bottom: 150px;
+	cursor: pointer;
+}
+
+.info-button {
+	padding: 10px 10px;
+	font-size: 24px;
+	background-color: #9176d9;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+	margin-bottom: 20px;
+	position: absolute;
+	bottom: 20px; 
+	left: 20px; 
+}
+
+.info-button:hover {
+	background-color: #bcade4;
+	transform: scale(1.05); 
+}
+
+.home-button {
+	padding: 10px 10px;
+	font-size: 24px;
+	background-color: #794df1;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+	margin-bottom: 20px;
+	position: absolute;
+	bottom: 20px; 
+	left: 100px; 
+}
+
+.home-button:hover {
+	background-color: #bcade4;
+	transform: scale(1.05); 
+}
+
+.option-button {
+	position: absolute;
+	height: auto;
+	right: 20px;
+	padding: 10px 10px;
+	font-size: 24px;
+	background-color: #4b2da0;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+	margin-bottom: 20px;
+	bottom: 20px; 
+}
+
+.option-button:hover {
+	background-color: #bcade4;
+	transform: scale(1.05); 
+}
+
+/* Posiziona il dialogo al centro dello schermo */
+/* Posiziona il dialogo al centro dello schermo */
+dialog {
+    width: 50%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #7dd3fc; /* Bordi viola */
+    background: #f0f9ff; /* Sfondo del dialogo */
+	margin-top: 10%;
+}
+
+/* Sfondo per il backdrop */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Effetto sfocatura */
+}
+
+/* Stile per il pulsante di chiusura */
+#closeOptions {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: rgb(216, 144, 48); /* Colore viola per il pulsante di chiusura */
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	position: absolute;
+	left: 20px;
+	margin-left: 90%;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Elemento individuale dell'opzione */
+.option-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-item label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: purple;
+}
+
+/* Stile per le immagini */
+.audio, .dark-mode, .camera {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Sfondo per il backdrop */
+.dialog-overlay::backdrop {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Effetto sfocatura */
+}
+
+

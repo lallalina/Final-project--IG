@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Game: Ping-Pong</title>
+</head>
+
+<body>
+
+    <h1 class="cube-title">Ping-Pong Game</h1>
+    <button id="start-button">Start Ping-Pong Game</button>
+    <button class="credit-button" id="credit-button">Credits</button>
+
+    <!--Audio-->
+    <div>
+        <audio id="audioElement">
+            <source src="./back.mp3" type="audio/mpeg">
+        </audio>
+        <img id="audioButton" src="audio.png" class="audio">
+    </div>
+
+    <!-- STYLE AND SCRIPT-->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('sfondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .cube-title {
+            font-size: 120px;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(205, 202, 202, 0.8);
+            }
+
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        #start-button,
+        .credit-button {
+            padding: 15px 30px;
+            font-size: 24px;
+            background-color: #1e4877;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-bottom: 20px;
+        }
+
+        #start-button:hover,
+        .credit-button:hover {
+            background-color: #4584b4;
+            transform: scale(1.05);
+        }
+
+        .credit-button {
+            background-color: #3b5998;
+        }
+
+        .credit-button:hover {
+            background-color: #4c70ba;
+        }
+
+        .audio {
+            position: absolute;
+            width: 40px;
+            height: auto;
+            right: 20px;
+            bottom: 40px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+			var audio = document.getElementById('audioElement');
+			var audioButton = document.getElementById('audioButton');
+
+			audio.play()
+
+			audioButton.addEventListener('click', function () {
+				if (audio.paused) {
+					audio.play();
+				} else {
+					audio.pause();
+				}
+			});
+
+		});
+        
+        // Open Game when clicking on "Start Game"
+        document.getElementById('start-button').addEventListener('click', function () {
+            window.location.href = 'game.html';
+        });
+
+        // Open credits dialog when clicking on "Credits"
+        document.getElementById('credit-button').addEventListener('click', function () {
+            alert('Developed by: Maria Laura Lipari');
+        });
+
+    </script>
+
+</body>
+
+</html>

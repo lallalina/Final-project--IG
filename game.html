@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ping Pong</title>
+</head>
+
+<body class="game-container">
+	<div>
+		<button class="home-button" id="home-button">HOME</button>
+		<button class="info-button" id="info-button">INFO</button>
+		<button class="option-button" id="option-button">Options</button>
+	</div>
+
+	<!--Audio, Dark Mode, Camera-->
+	<dialog id="options">
+		<div class="header">
+			<b id="closeOptions">X</b>
+		</div>
+		<div class="options-container">
+			<div class="option-item">
+				<label>Audio</label>
+				<audio id="audioElement">
+					<source src="./game.mp3" type="audio/mpeg">
+				</audio>
+				<img id="audioButton" src="audio.png" class="audio">
+				<audio id="goalSound" src="/public/goal.mp3"></audio>
+				<audio id="hitSound" src="/public/hit.mp3"></audio>
+			</div>
+			<div class="option-item">
+				<label>Dark Mode</label>
+				<img id="darkModeButton" src="moon.png" class="dark-mode">
+			</div>
+			<div class="option-item">
+				<label>Vision</label>
+				<img id="cameraButton" src="/public/camera.png" class="camera">
+			</div>
+		</div>
+	</dialog>
+	
+
+
+	<!-- STYLE AND SCRIPT-->
+
+	<script type="module" src="/main.js"></script>
+	<script>
+		// Open info dialog when clicking on "Info"
+		document.getElementById('info-button').addEventListener('click', function () {
+			alert('Score = 5 to Win!');
+		});
+		// Open home page when clicking on "Home"
+		document.getElementById('home-button').addEventListener('click', function () {
+			window.location.href = "/index.html";;
+		});
+
+		//Audio
+		document.addEventListener("DOMContentLoaded", function () {
+			var audio = document.getElementById('audioElement');
+			var audioButton = document.getElementById('audioButton');
+
+			audio.play()
+
+			audioButton.addEventListener('click', function () {
+				if (audio.paused) {
+					audio.play();
+				} else {
+					audio.pause();
+				}
+			});
+
+		});
+	</script>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+	</style>
+
+</body>
+
+</html>
